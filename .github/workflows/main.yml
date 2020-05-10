@@ -34,16 +34,22 @@ jobs:
       run: |
         cd gardien_os
         mix deps.get
+      env:
+        SECRET_KEY_BASE: literally_anything
 
     # Runs Unit Tests
     - name: Unit
       run: |
         cd gardien_os
         mix test
+      env:
+        SECRET_KEY_BASE: literally_anything
 
     # Runs Static Code Analysis
     - name: Static
       run: |
         cd gardien_os
         mix credo
+      env:
+        SECRET_KEY_BASE: literally_anything
         
