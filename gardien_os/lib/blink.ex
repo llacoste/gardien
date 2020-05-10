@@ -1,25 +1,25 @@
 defmodule Blinky.Blink do
   use GenServer
 
-  def start_link() do
+  def start_link(args) do
     GenServer.start_link(__MODULE__, [])
   end
 
   def init([]) do
-    {:ok, pid} = ElixirALE.GPIO.start_link(21, :output)
+    {:ok, gpio} = Circuits.GPIO.open(21, :output)
     Process.send_after(self(), :blink_on, 500)
-    {:ok, pid}
+    {:ok, gpio}
   end
 
-  def handle_info(:blink_on, pid) do
-    ElixirALE.GPIO.write(pid, 1)
+  def handle_info(:blink_on, gpio) do
+    Circuits.GPIO.write(gpio, 1)
     Process.send_after(self(), :blink_off, 1000)
-    {:noreply, pid}
+    {:noreply, gpio}
   end
 
-  def handle_info(:blink_off, pid) do
-    ElixirALE.GPIO.write(pid, 0)
+  def handle_info(:blink_off, gpio) do
+    Circuits.GPIO.write(gpio, 0)
     Process.send_after(self(), :blink_on, 1000)
-    {:noreply, pid}
+    {:noreply, gpio}
   end
 end
