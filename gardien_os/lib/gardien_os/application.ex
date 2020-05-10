@@ -34,6 +34,7 @@ defmodule GardienOs.Application do
       # Children for all targets except host
       # Starts a worker by calling: GardienOs.Worker.start_link(arg)
       # {GardienOs.Worker, arg},
+      Blinky.Blink
     ]
   end
 
