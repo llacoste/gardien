@@ -2,7 +2,7 @@ defmodule Blinky.Blink do
   use GenServer
 
   def start_link() do
-      GenServer.start_link(__MODULE__, [])
+    GenServer.start_link(__MODULE__, [])
   end
 
   def init([]) do
@@ -22,5 +22,4 @@ defmodule Blinky.Blink do
     Process.send_after(self(), :blink_on, 1000)
     {:noreply, pid}
   end
-
 end
