@@ -1,7 +1,10 @@
 defmodule Blinky.Blink do
+  @moduledoc """
+  Simple module to make a GPIO light blink.
+  """
   use GenServer
 
-  def start_link(args) do
+  def start_link(_args) do
     GenServer.start_link(__MODULE__, [])
   end
 

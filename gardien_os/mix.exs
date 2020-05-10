@@ -59,7 +59,13 @@ defmodule GardienOs.MixProject do
       {:nerves_system_x86_64, "~> 1.11", runtime: false, targets: :x86_64},
 
       # GPIO
-      {:circuits_gpio, "~> 0.4"}
+      {:circuits_gpio, "~> 0.4"},
+
+      # UI
+      {:gardien_os_ui, path: "../gardien_os_ui"},
+
+      # CI
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 

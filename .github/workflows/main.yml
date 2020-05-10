@@ -31,15 +31,19 @@ jobs:
     
     # Install Dependencies
     - name: Install Dependencies
-      run: mix deps.get
+      run: |
+        cd gardien_os
+        mix deps.get
 
     # Runs Unit Tests
     - name: Unit
       run: |
+        cd gardien_os
         mix test
 
     # Runs Static Code Analysis
     - name: Static
       run: |
+        cd gardien_os
         mix credo
         
