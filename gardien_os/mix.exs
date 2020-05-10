@@ -59,7 +59,7 @@ defmodule GardienOs.MixProject do
       {:nerves_system_x86_64, "~> 1.11", runtime: false, targets: :x86_64},
 
       # Simplified GPIO
-      {:elixir_ale, "~> 1.2"},
+      {:elixir_ale, "~> 1.2"}
     ]
   end
 
