@@ -1,9 +1,0 @@
-{application,gardien_os,
-             [{applications,[kernel,stdlib,elixir,logger,runtime_tools,
-                             toolshed,ring_logger,shoehorn,elixir_ale]},
-              {description,"gardien_os"},
-              {modules,['Elixir.Blinky.Blink','Elixir.GardienOs',
-                        'Elixir.GardienOs.Application']},
-              {registered,[]},
-              {vsn,"0.1.0"},
-              {mod,{'Elixir.GardienOs.Application',[]}}]}.
