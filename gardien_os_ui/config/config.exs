@@ -10,10 +10,10 @@ use Mix.Config
 # Configures the endpoint
 config :gardien_os_ui, GardienOsUiWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "0OX/8ciJ4H7JyuYFq1WgjgupIaUxYPI2iXpelTJRQ9ZU6oGvsmDfJ0lZhVB6FDDr",
+  secret_key_base: "58pSTyXpAxXKhGdBofayYn1TwnqG6QLisbRF7MI2UjfMl0wae7eEUwu/+NPRZfvJ",
   render_errors: [view: GardienOsUiWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: GardienOsUi.PubSub,
-  live_view: [signing_salt: "X286uWqt"]
+  live_view: [signing_salt: "DDdJmG4r"]
 
 # Configures Elixir's Logger
 config :logger, :console,

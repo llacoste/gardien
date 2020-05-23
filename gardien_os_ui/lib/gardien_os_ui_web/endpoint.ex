@@ -7,7 +7,7 @@ defmodule GardienOsUiWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_gardien_os_ui_key",
-    signing_salt: "tNJjYSee"
+    signing_salt: "KUBw8CFp"
   ]
 
   socket "/socket", GardienOsUiWeb.UserSocket,
