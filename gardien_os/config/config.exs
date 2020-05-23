@@ -33,6 +33,7 @@ config :gardien_os_ui, GardienOsUiWeb.Endpoint,
   # Nerves root filesystem is read-only, so disable the code reloader
   code_reloader: false,
   debug_errors: false,
+  check_origin: false,
   http: [port: 80],
   # Use compile-time Mix config instead of runtime environment variables
   load_from_system_env: false,
