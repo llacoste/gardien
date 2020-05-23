@@ -96,6 +96,16 @@ config :mdns_lite,
     }
   ]
 
+config :webengine_kiosk,
+  uid: "kiosk",
+  gid: "kiosk",
+  data_dir: "/root/kiosk",
+  fullscreen: true,
+  background_color: "black",
+  progress: true,
+  sounds: true,
+  homepage: System.get_env("NERVES_KIOSK_URL")
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations

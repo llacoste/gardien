@@ -22,6 +22,7 @@ To start your Nerves app:
   * Install dependencies with `mix deps.get`
   * Create firmware with `mix firmware`
   * Burn to an SD card with `mix firmware.burn`
+  * Set `WIFI_PASSWORD`, `WIFI_SSID`, `NERVES_KIOSK_URL`
 
 ## Learn more
 

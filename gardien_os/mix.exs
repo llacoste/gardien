@@ -49,20 +49,22 @@ defmodule GardienOs.MixProject do
       {:nerves_pack, "~> 0.2", targets: @all_targets},
 
       # Dependencies for specific targets
-      {:nerves_system_rpi, "~> 1.11", runtime: false, targets: :rpi},
-      {:nerves_system_rpi0, "~> 1.11", runtime: false, targets: :rpi0},
-      {:nerves_system_rpi2, "~> 1.11", runtime: false, targets: :rpi2},
-      {:nerves_system_rpi3, "~> 1.11", runtime: false, targets: :rpi3},
-      {:nerves_system_rpi3a, "~> 1.11", runtime: false, targets: :rpi3a},
-      {:nerves_system_rpi4, "~> 1.11", runtime: false, targets: :rpi4},
-      {:nerves_system_bbb, "~> 2.6", runtime: false, targets: :bbb},
-      {:nerves_system_x86_64, "~> 1.11", runtime: false, targets: :x86_64},
+      # {:nerves_system_rpi, "~> 1.11", runtime: false, targets: :rpi},
+      # {:nerves_system_rpi0, "~> 1.11", runtime: false, targets: :rpi0},
+      # {:nerves_system_rpi2, "~> 1.11", runtime: false, targets: :rpi2},
+      # {:nerves_system_rpi3, "~> 1.11", runtime: false, targets: :rpi3},
+      # {:nerves_system_rpi3a, "~> 1.11", runtime: false, targets: :rpi3a},
+      # {:nerves_system_rpi4, "~> 1.11", runtime: false, targets: :rpi4},
+      # {:nerves_system_bbb, "~> 2.6", runtime: false, targets: :bbb},
+      # {:nerves_system_x86_64, "~> 1.11", runtime: false, targets: :x86_64},
+      {:kiosk_system_rpi3, "~> 1.0", runtime: false, targets: :rpi3},
 
       # GPIO
       {:circuits_gpio, "~> 0.4"},
 
       # UI
       {:gardien_os_ui, path: "../gardien_os_ui"},
+      {:webengine_kiosk, "~> 0.1"},
 
       # CI
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false}

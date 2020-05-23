@@ -23,12 +23,20 @@ config :nerves, source_date_epoch: "1589056450"
 
 config :logger, backends: [RingLogger]
 
+config :webengine_kiosk,
+  fullscreen: false,
+  background_color: "black",
+  progress: true,
+  sounds: true,
+  homepage: System.get_env("NERVES_KIOSK_URL")
+
 if Mix.target() != :host do
   import_config "target.exs"
 end
 
 import_config "../../gardien_os_ui/config/config.exs"
-import_config "../../gardien_os_ui/config/prod.exs"
+# import_config "../../gardien_os_ui/config/#{Mix.env()}.exs"
+
 config :gardien_os_ui, GardienOsUiWeb.Endpoint,
   # Nerves root filesystem is read-only, so disable the code reloader
   code_reloader: false,

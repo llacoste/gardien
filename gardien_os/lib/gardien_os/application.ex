@@ -30,15 +30,29 @@ defmodule GardienOs.Application do
   end
 
   def children(_target) do
+    platform_init(System.get_env("MIX_TARGET"))
+    webengine_opts = Application.get_all_env(:webengine_kiosk)
     [
       # Children for all targets except host
       # Starts a worker by calling: GardienOs.Worker.start_link(arg)
       # {GardienOs.Worker, arg},
-      Blinky.Blink
+      Blinky.Blink,
+      {WebengineKiosk, {webengine_opts, name: Display}}
     ]
   end
 
   def target() do
     Application.get_env(:gardien_os, :target)
+  end
+
+  defp platform_init("host"), do: :ok
+
+  defp platform_init(_target) do
+    :os.cmd('udevd -d')
+    :os.cmd('udevadm trigger --type=subsystems --action=add')
+    :os.cmd('udevadm trigger --type=devices --action=add')
+    :os.cmd('udevadm settle --timeout=30')
+
+    System.put_env("QTWEBENGINE_CHROMIUM_FLAGS", "--disable-gpu")
   end
 end
